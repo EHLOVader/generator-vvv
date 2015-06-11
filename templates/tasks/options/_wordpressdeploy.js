@@ -21,7 +21,7 @@ module.exports = {
                     "host": '<%= deploy.staging.db_host %>',
                     "url": '<%= deploy.staging.url %>',
                     "path": '<%= deploy.staging.path %>',
-                    "ssh_host": '<%= deploy.staging.ssh_host % > '
+                    "ssh_host": '<%= deploy.staging.ssh_host %>'
             },
             production: {
                 "title": "prod",
