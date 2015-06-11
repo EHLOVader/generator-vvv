@@ -65,7 +65,8 @@ function tasks() {
   this.template('tasks/options/_gitPull.js', 'tasks/options/gitPull.js');
   this.template('tasks/options/_svn_checkout.js', 'tasks/options/svn_checkout.js');
   this.template('tasks/options/_vagrant_commands.js', 'tasks/options/vagrant_commands.js');
-  
+  this.template('tasks/options/_wordpressdeploy.js', 'tasks/options/wordpressdeploy.js');
+
 
   this.template('tasks/_vagrant_commands_task.js', 'tasks/vagrant_commands_task.js');
 }
