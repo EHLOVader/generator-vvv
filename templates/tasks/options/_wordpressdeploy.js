@@ -4,34 +4,48 @@ module.exports = {
                     rsync_args: ['--verbose', '--progress', '-rlpt', '--compress', '--omit-dir-times', '--delete'],
                     exclusions: ['Gruntfile.js', '.git/', 'tmp/*', 'backups/', 'wp-config.php', 'composer.json', 'composer.lock', 'README.md', '.gitignore', 'package.json', 'node_modules']
             },
-            local: {
-                "title": "local",
-                    "database": '<%= site.db_name %>', //Needs implemented
-                    "user": '<%= site.db_user %>',
-                    "pass": '<%= site.db_pass %>',
-                    "host": '<%= site.db_host %>',
-                    "url": '<%=  site.url %>',
-                    "path": process.cwd() + '/htdocs'
-            },
-            staging: {
+<%
+    if ('object' === typeof deploy) {
+        if ( 'object' === typeof deploy.staging )
+        {
+%>            staging: {
                 "title": "staging",
-                    "database": '<%= deploy.staging.db_name %>',
-                    "user": '<%= deploy.staging.db_user %>',
-                    "pass": '<%= deploy.staging.db_pass %>',
-                    "host": '<%= deploy.staging.db_host %>',
+                    "database": '<%= deploy.staging.name %>',
+                    "user": '<%= deploy.staging.user %>',
+                    "pass": '<%= deploy.staging.pass %>',
+                    "host": '<%= deploy.staging.host %>',
                     "url": '<%= deploy.staging.url %>',
                     "path": '<%= deploy.staging.path %>',
                     "ssh_host": '<%= deploy.staging.ssh_host %>'
             },
+
+<%
+        }
+
+        if ( 'object' === typeof deploy.production )
+        {
+%>
             production: {
                 "title": "prod",
-                    "database": '<%= deploy.production.db_name %>',
-                    "user": '<%= deploy.production.db_user %>',
-                    "pass": '<%= deploy.production.db_pass %>',
-                    "host": '<%= deploy.production.db_host %>',
+                    "database": '<%= deploy.production.name %>',
+                    "user": '<%= deploy.production.user %>',
+                    "pass": '<%= deploy.production.pass %>',
+                    "host": '<%= deploy.production.host %>',
                     "url": '<%= deploy.production.url %>',
                     "path": '<%= deploy.production.path %>',
                     "ssh_host": '<%= deploy.production.ssh_host %>'
+            },
+<%
+        }
+    }
+%>
+            local: {
+                "title": "local",
+                    "database": '<%= site.id %>',
+                    "user": 'external',
+                    "pass": 'external',
+                    "host": '<%= site.url %>',
+                    "url": '<%=  site.url %>',
+                    "path": 'htdocs/'
             }
-
         }
