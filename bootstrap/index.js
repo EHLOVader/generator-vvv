@@ -53,11 +53,12 @@ var BootstrapVVV = yeoman.generators.Base.extend({
     this.repos = src.repos;
     this.svn_repos = src.svn_repos;
     this.plugins = src.plugins;
+    this.deploy = src.deploy;
     this.themes = src.themes;
     this.dependencies = src.dependencies;
     this.svn_dependencies = src.svn_dependencies;
     this.db = src.db;
-		this.remoteDatabase = src.remoteDatabase;
+    this.remoteDatabase = src.remoteDatabase;
   },
   // output
   generateSiteId: output.generateSiteId,

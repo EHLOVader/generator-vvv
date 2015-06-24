@@ -12,6 +12,7 @@ function ensureValues() {
   this.site = this.site || {};
   this.wordpress = this.wordpress || {};
   this.repos = this.repos || false;
+  this.deploy = this.deploy || {};
   this.svn_repos = this.svn_repos || false;
   this.dependencies = this.dependencies || '';
   this.svn_dependencies = this.svn_dependencies || '';
@@ -69,6 +70,7 @@ function tasks() {
 
 
   this.template('tasks/_vagrant_commands_task.js', 'tasks/vagrant_commands_task.js');
+  this.template('tasks/wordpressdeploy_task.js', 'tasks/wordpressdeploy_task.js');
 }
 
 function scripts() {
