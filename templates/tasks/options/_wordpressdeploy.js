@@ -10,7 +10,7 @@ module.exports = {
         {
 %>            staging: {
                 "title": "staging",
-                    "database": '<%= deploy.staging.name %>',
+                    "database": '<%= deploy.staging.database %>',
                     "user": '<%= deploy.staging.user %>',
                     "pass": '<%= deploy.staging.pass %>',
                     "host": '<%= deploy.staging.host %>',
@@ -27,7 +27,7 @@ module.exports = {
 %>
             production: {
                 "title": "prod",
-                    "database": '<%= deploy.production.name %>',
+                    "database": '<%= deploy.production.database %>',
                     "user": '<%= deploy.production.user %>',
                     "pass": '<%= deploy.production.pass %>',
                     "host": '<%= deploy.production.host %>',
