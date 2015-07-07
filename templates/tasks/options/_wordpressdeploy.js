@@ -1,7 +1,7 @@
 module.exports = {
             options: {
                 backup_dir: "backups/",
-                    rsync_args: ['--verbose', '--progress', '-rlpt', '--compress', '--omit-dir-times', '--delete'],
+                    rsync_args: ['--verbose', '--progress', '-rLpt', '--compress', '--omit-dir-times', '--delete'],
                     exclusions: ['Gruntfile.js', '.git/', 'tmp/*', 'backups/', 'wp-config.php', 'composer.json', 'composer.lock', 'README.md', '.gitignore', 'package.json', 'node_modules']
             },
 <%
